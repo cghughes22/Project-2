@@ -11,7 +11,7 @@ rf = RandomForestRegressor(n_estimators=1000,max_depth=3)
 ```
 ### Boston Housing Prices Dataset
 
-<img src="Assets/Housing Price Dataset Graph.png" width="400" height="600" alt=hi class="inline"/>
+<img src="Assets/Housing Price Dataset Graph.png" width="800" height="600" alt=hi class="inline"/>
 
 ### Locally Weighted Regression on Boston Housing Prices dataset
 Using the median price, or "cmedv, as the output variable for this dataset, 
