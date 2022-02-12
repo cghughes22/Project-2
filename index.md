@@ -48,6 +48,23 @@ mae_lowess = mean_absolute_error(dat_test[:,1], yhat)
 print("MAE = ${:,.2f}".format(1000*mae))
 print("MAE LOWESS = ${:,.2f}".format(1000*mae_lowess))
 ```
+The mean absolute error values for the regular model and the LOWESS model come out to be $4,140.78 and $3,951.13, respectively. The resulting line is fit to the aforementioned graph, shown here.
+```Python
+fig, ax = plt.subplots(figsize=(10,8))
+ax.set_xlim(3, 9)
+ax.set_ylim(0, 51)
+ax.scatter(x=df['rooms'], y=df['cmedv'],s=25)
+ax.plot(X_test, lm.predict(X_test), color='red')
+ax.plot(dat_test[:,0], yhat, color='orange',lw=3)
+ax.set_xlabel('Number of Rooms',fontsize=16,color='Darkgreen')
+ax.set_ylabel('House Price (Tens of Thousands of Dollars)',fontsize=16,color='Darkgreen')
+ax.set_title('Boston Housing Prices',fontsize=16,color='purple')
+ax.grid(b=True,which='major', color ='grey', linestyle='-', alpha=0.8)
+ax.grid(b=True,which='minor', color ='grey', linestyle='--', alpha=0.2)
+ax.minorticks_on()
+```
+<img src="Assets/Fitted Line.png" width="800" height="600" alt=hi class="inline">
+
 ### Random Forests on Boston Housing Prices dataset
 After applying the local regressions onto the Boston dataset and obtaining different values for the mean absolute error, I set up random forests in order to find the mean absolute error. After doing so, I obtained a value of $3,991.68. The Python code here shows how to set up random forests, and obtain the mean absolute error for the dataset.
 ```Python
