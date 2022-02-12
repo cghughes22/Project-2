@@ -76,3 +76,6 @@ yhat_rf = rf.predict(X_test)
 mae_rf = mean_absolute_error(y_test, yhat_rf)
 print("MAE RF = ${:,.2f}".format(1000*mae_rf))
 ```
+
+### Conclusion
+After conducting multiple locally weighted regressions and constructing a random forest, I have determined that the best method for finding the mean absolute error is the LOWESS weighted regression model, as that came away with the lowest of the mean absolute error values at $3,951.13.
